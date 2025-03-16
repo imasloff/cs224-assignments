@@ -283,12 +283,12 @@ def train(args: Dict):
                         print('load previously best model and decay learning rate to %f' % lr, file=sys.stderr)
 
                         # load model
-                        params = torch.load(model_save_path, map_location=lambda storage, loc: storage)
+                        params = torch.load(model_save_path, map_location=lambda storage, loc: storage, weights_only=False)
                         model.load_state_dict(params['state_dict'])
                         model = model.to(device)
 
                         print('restore parameters of the optimizers', file=sys.stderr)
-                        optimizer.load_state_dict(torch.load(model_save_path + '.optim'))
+                        optimizer.load_state_dict(torch.load(model_save_path + '.optim', weights_only=False))
 
                         # set new lr
                         for param_group in optimizer.param_groups:
