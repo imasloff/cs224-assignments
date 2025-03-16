@@ -17,7 +17,8 @@ Usage:
 
 Options:
     -h --help                               show this screen.
-    --cuda                                  use GPU
+    --cuda                                  use GPU (Win / Linux)
+    --mps                                   use GPU (Mac)
     --train-src=<file>                      train source file
     --train-tgt=<file>                      train target file
     --dev-src=<file>                        dev source file
@@ -150,7 +151,7 @@ def train(args: Dict):
                 dropout_rate=float(args['--dropout']),
                 vocab=vocab)
     
-    tensorboard_path = "nmt" if args['--cuda'] else "nmt_local"
+    tensorboard_path = "nmt" if args['--cuda'] or args['--mps'] else "nmt_local"
     writer = SummaryWriter(log_dir=f"./runs/{tensorboard_path}")
     model.train()
 
@@ -163,7 +164,13 @@ def train(args: Dict):
     vocab_mask = torch.ones(len(vocab.tgt))
     vocab_mask[vocab.tgt['<pad>']] = 0
 
-    device = torch.device("cuda:0" if args['--cuda'] else "cpu")
+    device_name = "cpu"
+    if args['--cuda']:
+        device_name = "cuda:0"
+    elif args['--mps']:
+        device_name = "mps:0"
+    
+    device = torch.device(device_name)
     print('use device: %s' % device, file=sys.stderr)
 
     model = model.to(device)
@@ -318,8 +325,14 @@ def decode(args: Dict[str, str]):
     print("load model from {}".format(args['MODEL_PATH']), file=sys.stderr)
     model = NMT.load(args['MODEL_PATH'])
 
+    device_name = None
     if args['--cuda']:
-        model = model.to(torch.device("cuda:0"))
+        device_name = "cuda:0"
+    elif args['--mps']:
+        device_name = "mps:0"
+
+    if device_name:
+        model = model.to(torch.device(device_name))
 
     hypotheses = beam_search(model, test_data_src,
                             #  beam_size=int(args['--beam-size']),                      EDIT: BEAM SIZE USED TO BE 5
@@ -376,6 +389,9 @@ def main():
     torch.manual_seed(seed)
     if args['--cuda']:
         torch.cuda.manual_seed(seed)
+    elif args['--mps']:
+        torch.mps.manual_seed(seed)
+        
     np.random.seed(seed * 13 // 7)
 
     if args['train']:
