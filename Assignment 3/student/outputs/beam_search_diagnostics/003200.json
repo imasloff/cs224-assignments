@@ -1,0 +1,239 @@
+{
+    "example_source": [
+        "▁我还",
+        "澄清",
+        "了",
+        "在该",
+        "会议上",
+        "提出的",
+        "若干",
+        "事项",
+        "。"
+    ],
+    "example_target": [
+        "<s>",
+        "▁i",
+        "▁was",
+        "▁able",
+        "▁to",
+        "▁provide",
+        "▁clarification",
+        "▁on",
+        "▁some",
+        "▁of",
+        "▁the",
+        "▁matters",
+        "▁which",
+        "▁were",
+        "▁raised",
+        "▁at",
+        "▁that",
+        "▁meeting",
+        ".",
+        "</s>"
+    ],
+    "hypotheses": [
+        {
+            "hypothesis": [
+                "▁i",
+                "▁have",
+                "▁a",
+                "▁number",
+                "▁of",
+                "▁views",
+                "▁on",
+                "▁the",
+                "▁number",
+                "▁of",
+                "▁matters",
+                "."
+            ],
+            "score": -15.194021224975586
+        },
+        {
+            "hypothesis": [
+                "▁i",
+                "▁would",
+                "▁have",
+                "▁a",
+                "▁number",
+                "▁of",
+                "▁views",
+                "▁on",
+                "▁the",
+                "▁number",
+                "▁of",
+                "▁matters",
+                "."
+            ],
+            "score": -16.64674949645996
+        },
+        {
+            "hypothesis": [
+                "▁i",
+                "▁would",
+                "▁like",
+                "▁to",
+                "▁have",
+                "▁a",
+                "▁number",
+                "▁of",
+                "▁views",
+                "▁on",
+                "▁the",
+                "▁number",
+                "▁of",
+                "▁matters",
+                "."
+            ],
+            "score": -17.93667984008789
+        },
+        {
+            "hypothesis": [
+                "▁i",
+                "▁would",
+                "▁like",
+                "▁to",
+                "▁have",
+                "▁a",
+                "▁number",
+                "▁of",
+                "▁views",
+                "▁on",
+                "▁a",
+                "▁number",
+                "▁of",
+                "▁matters",
+                "."
+            ],
+            "score": -18.127246856689453
+        },
+        {
+            "hypothesis": [
+                "▁i",
+                "▁would",
+                "▁like",
+                "▁to",
+                "▁have",
+                "▁a",
+                "▁number",
+                "▁of",
+                "▁views",
+                "▁on",
+                "▁the",
+                "▁number",
+                "▁of",
+                "▁meetings",
+                "."
+            ],
+            "score": -18.24976348876953
+        },
+        {
+            "hypothesis": [
+                "▁i",
+                "▁would",
+                "▁like",
+                "▁to",
+                "▁have",
+                "▁a",
+                "▁number",
+                "▁of",
+                "▁views",
+                "▁on",
+                "▁a",
+                "▁number",
+                "▁of",
+                "▁occasions",
+                "."
+            ],
+            "score": -18.56523323059082
+        },
+        {
+            "hypothesis": [
+                "▁i",
+                "▁would",
+                "▁like",
+                "▁to",
+                "▁have",
+                "▁a",
+                "▁number",
+                "▁of",
+                "▁views",
+                "▁on",
+                "▁the",
+                "▁number",
+                "▁of",
+                "▁issues",
+                "."
+            ],
+            "score": -18.649486541748047
+        },
+        {
+            "hypothesis": [
+                "▁i",
+                "▁would",
+                "▁like",
+                "▁to",
+                "▁have",
+                "▁a",
+                "▁number",
+                "▁of",
+                "▁views",
+                "▁on",
+                "▁a",
+                "▁number",
+                "▁of",
+                "▁issues",
+                "."
+            ],
+            "score": -18.776504516601562
+        },
+        {
+            "hypothesis": [
+                "▁i",
+                "▁would",
+                "▁like",
+                "▁to",
+                "▁have",
+                "▁a",
+                "▁number",
+                "▁of",
+                "▁views",
+                "▁on",
+                "▁the",
+                "▁number",
+                "▁of",
+                "▁meetings",
+                "▁of",
+                "▁the",
+                "▁conference",
+                "."
+            ],
+            "score": -22.766258239746094
+        },
+        {
+            "hypothesis": [
+                "▁i",
+                "▁would",
+                "▁like",
+                "▁to",
+                "▁have",
+                "▁a",
+                "▁number",
+                "▁of",
+                "▁views",
+                "▁on",
+                "▁the",
+                "▁number",
+                "▁of",
+                "▁matters",
+                "▁of",
+                "▁the",
+                "▁conference",
+                "."
+            ],
+            "score": -22.89710807800293
+        }
+    ],
+    "diagnostic_info": "eyJ0IjogIjIwMjUtMDMtMTZUMTQ6MzA6NDguMTYzMTA1IiwgImgiOiAiSXZhbnMtTWFjQm9vay1BaXIubG9jYWwiLCAidSI6ICJyb290In0="
+}
